@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>First Page</title>
+<style>
+#b1 {
+	width: 350px;
+	height: 35px;
+	background: #4C77ED;
+	color: white;
+	border-color: transparent;
+}
+
+.t1 {
+	width: 150px;
+	text-align: center;
+}
+
+button {
+	border-color: transparent;
+}
+</style>
+</head>
+<body>
+	<div class="main">
+		<div class="title">
+			<h1>회원검색 페이지</h1>
+			<hr>
+		</div>
+
+		<div class="content">
+			<a href="member.html">
+				<button id="b1">이전으로 돌아가기</button><br>
+			</a>
+			<!--a태그는 무조건 get방식 요청 -->
+			<a href="http://localhost:8888/web00/one.jsp?id=aaa">
+				<button style="background: white">회원1 검색</button>
+			</a> <a href="http://localhost:8888/web00/one.jsp?id=apple1">
+				<button style="background: white">회원2 검색</button>
+			</a> <a href="http://localhost:8888/web00/one.jsp?id=apple2">
+				<button style="background: white">회원3 검색</button>
+			</a> <a href="http://localhost:8888/web00/one.jsp?id=apple3">
+				<button style="background: white">회원4 검색</button>
+			</a> 
+			<form action="list.jsp" method="get">
+				<table>
+					<tr>
+						<td class="t1">회원목록</td>
+						<td colspan="2" class="t1">
+							<button>검색</button>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

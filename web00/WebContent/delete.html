@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>First Page</title>
+<style>
+#b1 {
+	width: 350px;
+	height: 35px;
+	background: #4C77ED;
+	color: white;
+	border-color: transparent;
+}
+
+.t1 {
+	width: 150px;
+	text-align: center;
+}
+
+button {
+	border-color: transparent;
+}
+</style>
+</head>
+<body>
+	<div class="main">
+		<div class="title">
+			<h1>회원탈퇴 페이지</h1>
+			<hr>
+		</div>
+
+		<div class="content">
+			<a href="member.html">
+				<button id="b1">이전으로 돌아가기</button>
+			</a>
+			<form action="delete.jsp">
+				<table>
+					<tr>
+						<td class="t1">아이디</td>
+						<td><input name="id"></td>
+					</tr>
+					<tr>
+						<td colspan="2" class="t1">
+							<button>회원탈퇴</button>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
