@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.6.4.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#b1').click(function() {
+			re = $('#reply').val()
+			divTag = $('#result')
+			divTag.append(re + "<br>")
+		})
+		
+		$('#b2').click(function() {
+			divTag = $('#result')
+			divTag.append("<img src='img/img.jpg' width='50' height='50'>")
+		})
+		
+		$('#b3').click(function() {
+			re = $('#reply').val()
+			divTag = $('#result')
+			divTag.append("<img src='img/img.jpg' width='50' height='50'>")
+			divTag.append(re + "<br>")
+		})
+	})
+</script>
+</head>
+<body>
+	입력내용 : <input id="reply" value="입력하세요">
+	<button id="b1">글자 추가</button>
+	<button id="b2">자동차 추가</button>
+	<button id="b3">동시에 추가</button>
+	<div id="result"></div>
+</body>
+</html>

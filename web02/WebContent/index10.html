@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.6.4.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#b1").click(function() {
+			i2 = $("#in2").val()
+			i3 = $("#in3").val()
+			m = $("#me").val()
+			divTag = $("#result")
+			if (i2 == 1 && i3 ==1) {
+				//divTag.text("우산 꼭 챙기세요") //태그사이에 글자만 넣을 때
+				divTag.html("<font color=red>우산 꼭챙기세요</font><br>") //태그사이에 글자 + 글자 + html태그를 넣을 때
+			} else {
+				divTag.text("우산 확인 하세요<br>")
+			}
+			divTag.append(m + "<br>")
+		})
+	})
+</script>
+</head>
+<body>
+	비가 오나요? 1)온다 2)안 온다 <input id="in2" value="1"><br>
+	구름은 많은가요? 1)많다 2)안 많다 <input id="in3" value="1"><br>
+	오늘 내 기분은? 1)많다 2)안 많다 <input id="me" value="hahaha"><br>
+	<button id="b1">클릭</button>
+	<hr>
+	<div id="result"></div>
+</body>
+</html>

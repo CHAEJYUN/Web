@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.6.4.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#b1').click(function() {
+			alert('b1이 클릭되었음')
+			// 태그 사이에 글자가 있는 경우와 input 태그의 값이 있는 경우는 다르다
+			t1 = $('#text1').text() //태그사이의 text를 가져올 때는 text
+			alert('가지고 온 값은 => ' + t1)
+			t2 = $('#text2').val() //input값 가져올 때는 val
+			alert('가지고 온 값은 => ' + t2)
+		})
+		$('#b2').click(function() {
+			alert('b2이 클릭되었음')
+		})
+		$('#b3').click(function() {
+			alert('b3클릭되었음')
+			//set의 의미
+			$('#text3').text('내가 들어간다~~~~~')
+			$('#text4').val('나의 id는 hahahahahhahahahaha')
+		})
+	})
+</script>
+</head>
+<body>
+<h3 id='text1'>나는 1번의 text</h3><br>
+<input id='text2' value='나는 2번의 값' style='background:yellow'><br>
+<h3 id='text3'>여기는 결과</h3><br>
+<input id='text4' style='background:pink'><br>
+<hr>
+	<button id='b1'>push me1</button>
+	<button id='b2'>push me2</button>
+	<button id='b3'>push me3</button>
+</body>
+</html>
