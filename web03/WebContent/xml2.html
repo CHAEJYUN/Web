@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.6.4.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#b1").click(function() {
+			$.ajax({
+				url : "data/dataset2.xml",
+				success : function(doc) {
+					alert("xml요청 성공 >> " + doc)
+					list = $(doc).find("record") //find의 결과는 항상 여러개 ==> 배열로 만들어짐
+					alert(list.length)
+					for (i = 0; i < list.length; i++) { //타입 상관없어서 안적어줘도 된다
+						owner_first_name = $(list[i]).find('owner_first_name').text()
+						car_make = $(list[i]).find('car_make').text()
+						car_model = $(list[i]).find('car_model').text()
+						car_model_year = $(list[i]).find('car_model_year').text()
+						car_vin = $(list[i]).find('car_vin').text()
+						car_color = $(list[i]).find('car_color').text()
+						$('#result').append(owner_first_name + ", " + 
+											car_make + ", " + 
+											car_model + ", " + 
+											car_model_year + ", " + 
+											car_vin + ", " + 
+											car_color + "<br>")
+						//받은 데이터를 추출해서 db에 저장해두고 싶은 경우
+						//브라우저 -> 웹서버 -> db
+						//받은 데이터를 웹서버에게 넘겨주면 됨
+						//비동기 통신이 필요
+						 //jsp를 호출해서 데이터 받아서 db에 넣어달라는 요청 
+						$.ajax({
+							url: "mock2.jsp",
+							async: "false",
+							data : {
+								owner_first_name : owner_first_name,
+								car_make : car_make,
+								car_model : car_model,
+								car_model_year : car_model_year,
+								car_vin : car_vin,
+								car_color : car_color
+							}, 
+							success: function() {
+								console.log('넣기 성공')
+							} //success
+						}) //ajax
+					} //for
+				} //success
+			}) // ajax
+		}) // b3
+	}) // $
+</script>
+</head>
+<body>
+	<button id="b1">XML 받아오기</button>
+	<hr>
+	<div id="result"></div>
+</body>
+</html>
